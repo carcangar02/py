@@ -1,0 +1,17 @@
+Voy a crear una herramienta que consiste en un creador de ebooks
+
+Mi fuente de los libros sera la pagina LightNovelCave.com, donde 
+se van actualizando periodicamente
+
+Tendra una interfaz, desde la cual establezco el periodo de 
+actualizacion de los diferentes libros, ya sea 
+diaria, personalizada o poder actualizar en el momento. 
+Se podra decidir que libros se actualizan y cuales no y cada 
+libro podra tener un periodo de actualizacion diferente
+
+Todo lo realcionado con la actualizacion estara 
+gestionado con AirFlow
+
+La interfaz la hare con Django, html y css 
+
+Los scripts con python

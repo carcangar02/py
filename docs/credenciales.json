@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cool-evening-427114-a5",
+  "private_key_id": "dab47092e73f0c034f1437dbdc9d76c1f1a30966",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDKAwyr14h1hhX1\n1R+Q4P8XCqAYMQZEPaPyYU0yWs5Iqzhy2oj/LG6PXzIADqaJy1RkJxFkoV4FzSxf\ncLNMSZL/xwUxdHQqrRh+1Z92XbzF7V0fyLgvvaetAjB79bZlqqwIl8waxma+za8t\nhQwYa/nuJ14so2sU7nIgAkx8eUP2e6SveFEWwfjfVCy0c/0FkHHpm1D25pFksg/s\nbKGd1UF8fU0ms06cyVF1e3C96TCgCfwfpmJYCE2j/BFxLocqgGFuH+R28Rm95iKy\nGb9LpTpwtvb6RAjmO2R0gDtaerOG79D+YcqWJWeC2jHR1ZUE73N3zE8xL4OUGvcC\nVcqIsbYLAgMBAAECggEAClC2jG3Qk4O5ylhMKNc8X15VB3c1ZTWqkf1i9j/Jyc8o\nbkD3fuQzbxHC2VrmKSIfWI/gJP3SccRk0CjOlwYowfPVMY3LQsSc/BkHcAFgWtEA\nkNdshE+QaNa0SBgnbLCW4UdzDij0ZSjWmaHyGKsm04DiH7BmjuaQIE9NvYtpq4PU\nh7VcjX3qmMNFhi6SS49V672pbqGSOdTumfM5hpQW6DieQYrfE2kiHUq+PQY60Y7f\nQlKPPzkUI2ipRQFWU8zvI+EyOHUMxqvEXsxjs13QNztf25UMW1/7poaiScvUAope\nvVlN41r0BPgYxnm5a59y9iKAZ2cVHM9oHlmMDsroJQKBgQDu7cYIcshsqVc1qSqV\npVlbReXFv95Zip+j0nTsIlhdIgIE55wvaB+YbmONMNsakhb1RNgI12sWg9uSVW5O\nhKnvumtWcqKLgZTjQ58e+40W2lrtSilPvhtqlJqdFtsFq03poGoUdrBQfYtfKrZU\n8HPXpuDrS9jikKsr5IWbYi2gnQKBgQDYcgg/UapdnCk8PWx61aEdq+NaT3kQO79j\nlLjAx+Z/lQAfWJe0qTEB2/9oQRhZT/PORQmD7+TAXRKjAutNaAuw8RGu5i8sdFlG\n4pU1lC0hohhUlSVmPSyO2ntqSgpoj5pPHp/CT+SEw0gIuzPppi7WLXJKi00uKP7j\nWL38GbSMxwKBgEX8lj6RSM4ziF0qkVPGXHdU8SpMupfl+D8nfaJRqSqWtJq1MVXd\nnSusYjLQdc3Br0HnCZUFbNPqid3Cco5DY/fZ1mk7KQvOSEuN2kVcEAb6rRnG2HUI\nTcWZg/Sx5jQx6p+dopUd8yWQsMuOmlwlFvm7YzTpQb2T/N/dj5llV9ItAoGAHYuj\nWJFbQh/4+QIhdrsGnThDdqZ2jiK5w2wftCEVc8DxHVZIjx6xU+GmAaMxIa/qRfPi\nkqIChceurZXObOiQ//xIP6moMtdHAIgZehDaAEdSLumVC1m6ZV2pjx7AQPmpRLeX\nczzYos7NXHPBaFmI9y+I9GgDhxONh5crh+gyXy0CgYEAwVNEvauREIxQT+nKwRe4\npSTMhrs4M/s4U0xhrELWG+lgXFllmdQhatrg0q1C48IhABEDcppR+nMCnbS++pxd\nHNd3uFRRxb7V5Jc1UBpQYHb5To8NZsZtTi6hRVQY013OxQhukSL8tA+MJ+A9EAeI\nVENcophvWXDUB+Fdo+Y+DTo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "uploadbooks@cool-evening-427114-a5.iam.gserviceaccount.com",
+  "client_id": "110024312672041415140",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uploadbooks%40cool-evening-427114-a5.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
