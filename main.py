@@ -4,6 +4,7 @@ from imports.getArrayNumCaps import getArrayNumCaps
 from imports.capBuilder import capBuilder
 import mysql.connector as sql
 from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 from concurrent.futures import as_completed
 from tqdm import tqdm
 
@@ -24,7 +25,7 @@ for libro in libros:
     arrayNumCaps = getArrayNumCaps(urlCap,num_cap)##OUT: arrayNumCaps[caps]    caps(int)
     args = [(url,name,arrayNumCapElement) for arrayNumCapElement in arrayNumCaps]
 
-    with ThreadPoolExecutor(max_workers=3) as executor:
+    with ProcessPoolExecutor(max_workers=6) as executor:
         arrayCapitulos = list(tqdm(executor.map(capBuilder, args), total=len(arrayNumCaps)))
 
 

@@ -15,25 +15,28 @@ def toEbook(arrayCapitulos, name,lastChap):
     # Bucle para agregar capítulos
     for idx, cap in enumerate(arrayCapitulos):
         # Extraer contenido y número del capítulo
-        contenido = cap[0].replace("\n", "<br>") 
-        num_cap = cap[1]
+        try:
+            contenido = cap[0].replace("\n", "<br>") 
+            num_cap = cap[1]
 
-        # Crear un capítulo con un nombre único
-        capitulo = epub.EpubHtml(
-            title=f"Capítulo {num_cap}",
-            file_name=f"capitulo_{num_cap}.xhtml",
-            lang="es"
-        )
-        capitulo.content = f"""
-        <h1>Capítulo {num_cap}</h1>
-        <div style="white-space: pre-wrap; line-height: 1.6; font-family: Arial, sans-serif; font-size: 16px;">
-            {contenido}
-        </div>
-        """
+            # Crear un capítulo con un nombre único
+            capitulo = epub.EpubHtml(
+                title=f"Capítulo {num_cap}",
+                file_name=f"capitulo_{num_cap}.xhtml",
+                lang="es"
+            )
+            capitulo.content = f"""
+            <h1>Capítulo {num_cap}</h1>
+            <div style="white-space: pre-wrap; line-height: 1.6; font-family: Arial, sans-serif; font-size: 16px;">
+                {contenido}
+            </div>
+            """
 
-        # Agregar capítulo al libro y a la lista de capítulos
-        libro.add_item(capitulo)
-        capitulos.append(capitulo)
+            # Agregar capítulo al libro y a la lista de capítulos
+            libro.add_item(capitulo)
+            capitulos.append(capitulo)
+        except Exception as e:
+            print(f"Error al crear el capítulo {num_cap}: {e}")
 
     # Crear el índice TOC con todos los capítulos
     libro.toc = tuple(capitulos)
