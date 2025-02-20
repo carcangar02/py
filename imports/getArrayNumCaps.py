@@ -33,4 +33,5 @@ def getArrayNumCaps(urlCap,numCap):
     numCapFinal = int(numCapFinalstr)
     print(f'ultimo cap -> {numCapFinal}')
     arrayNumCaps = list(range(numCap,numCapFinal+1))
+    driver.quit()
     return arrayNumCaps

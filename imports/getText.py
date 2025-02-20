@@ -16,4 +16,5 @@ def getText(url):
     time.sleep(1)
     capText = driver.find_element(By.ID,'chapter-container')
     text = capText.text 
+    driver.quit()
     return text
