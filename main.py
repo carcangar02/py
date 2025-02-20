@@ -4,10 +4,13 @@ from imports.getArrayNumCaps import getArrayNumCaps
 from imports.capBuilder import capBuilder
 import mysql.connector as sql
 from concurrent.futures import ThreadPoolExecutor
-from concurrent.futures import ProcessPoolExecutor
-from concurrent.futures import as_completed
+import subprocess
 from tqdm import tqdm
-
+apagar = input('Desea apagar el equipo al finalizar? (s/n): ')
+if apagar == 's':
+    apagar = True
+else:
+    apagar = False
 libros = getLibros()
 #bucle1 iterar sobre libros
 for libro in libros:
@@ -25,17 +28,18 @@ for libro in libros:
     arrayNumCaps = getArrayNumCaps(urlCap,num_cap)##OUT: arrayNumCaps[caps]    caps(int)
     args = [(url,name,arrayNumCapElement) for arrayNumCapElement in arrayNumCaps]
 
-    with ProcessPoolExecutor(max_workers=6) as executor:
+    with ThreadPoolExecutor(max_workers=7) as executor:
         arrayCapitulos = list(tqdm(executor.map(capBuilder, args), total=len(arrayNumCaps)))
 
 
 
     #break2
-
-
-
-    lastChap = arrayCapitulos[len(arrayCapitulos)-1][1]
-
+    subprocess.call("taskkill /F /IM chrome.exe /T", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        print(arrayCapitulos[len(arrayCapitulos)-1][1])
+        lastChap = arrayCapitulos[len(arrayCapitulos)-1][1]
+    except Exception as e:
+        lastChap =arrayNumCaps[len(arrayCapitulos)-1]
 
     db = sql.connect(
         host='localhost',
@@ -49,6 +53,8 @@ for libro in libros:
     db.commit()
 
     rutaEbook=toEbook(arrayCapitulos,name,lastChap)## ruta(str)
+    if apagar:
+        subprocess.call("shutdown /s /t 1", shell=True)
 
 
 
