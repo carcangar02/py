@@ -1,8 +1,9 @@
 from imports.getText import getText
 from imports.translate import translate
 
-def capBuilder(url,name,arrayNumCapElement):
+def capBuilder(args):
     try:
+        url,name,arrayNumCapElement = args
         urlCap = url+f'{arrayNumCapElement}' 
         text=getText(urlCap)##OUT: text(str)
         print(f'{name}, {arrayNumCapElement}')
