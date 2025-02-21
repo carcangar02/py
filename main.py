@@ -3,7 +3,7 @@ from imports.getLibros import getLibros
 from imports.getArrayNumCaps import getArrayNumCaps
 from imports.capBuilder import capBuilder
 import mysql.connector as sql
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import subprocess
 from tqdm import tqdm
 apagar = input('Desea apagar el equipo al finalizar? (s/n): ')
@@ -26,20 +26,25 @@ for libro in libros:
     #bucle2 iterar sobre capitulos pendientes 
 
     arrayNumCaps = getArrayNumCaps(urlCap,num_cap)##OUT: arrayNumCaps[caps]    caps(int)
+    lastChap =arrayNumCaps[len(arrayCapitulos)-1]
     args = [(url,name,arrayNumCapElement) for arrayNumCapElement in arrayNumCaps]
 
-    with ThreadPoolExecutor(max_workers=7) as executor:
-        arrayCapitulos = list(tqdm(executor.map(capBuilder, args), total=len(arrayNumCaps)))
+    with ThreadPoolExecutor(max_workers=16) as executor:
+        futures = {executor.submit(capBuilder, arg): arg for arg in args}  
 
+        arrayCapitulos = []
+        for future in tqdm(as_completed(futures), total=len(arrayNumCaps)):
+            result = future.result(timeout=10)
+            arrayCapitulos.append(result)
+  
 
-
-    #break2
+    arrayCapitulos.sort(key=lambda x: x[1])
     subprocess.call("taskkill /F /IM chrome.exe /T", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
         print(arrayCapitulos[len(arrayCapitulos)-1][1])
         lastChap = arrayCapitulos[len(arrayCapitulos)-1][1]
     except Exception as e:
-        lastChap =arrayNumCaps[len(arrayCapitulos)-1]
+        print(e)
 
     db = sql.connect(
         host='localhost',

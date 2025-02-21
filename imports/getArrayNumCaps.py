@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
@@ -13,13 +14,14 @@ def getArrayNumCaps(urlCap,numCap):
     driver_options.add_argument("--disable-logging")  # Desactivar logs generales (opcional)
     driver = webdriver.Edge(options=driver_options)
     driver.get(urlCap)
-    
-    time.sleep(1)
+    wait = WebDriverWait(driver, 5)  
+    wait.until(EC.presence_of_element_located((By.TAG_NAME, 'h1')))
     seccionTitulo = driver.find_element(By.TAG_NAME, 'h1')
     enlaceContenerdor = seccionTitulo.find_element(By.CLASS_NAME, 'booktitle')
     enlace = enlaceContenerdor.get_attribute('href')
     driver.get(enlace)
-    time.sleep(1)
+    wait = WebDriverWait(driver, 5)  
+    wait.until(EC.presence_of_element_located((By.CLASS_NAME, "header-stats")))
     elemento_padre = driver.find_element(By.CLASS_NAME, "header-stats")
 
     # Encontrar el primer <span> dentro del elemento padre

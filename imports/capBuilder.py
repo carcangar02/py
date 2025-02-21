@@ -6,14 +6,13 @@ def capBuilder(args):
         url,name,arrayNumCapElement = args
         urlCap = url+f'{arrayNumCapElement}' 
         text=getText(urlCap)##OUT: text(str)
-        print(f'{name}, {arrayNumCapElement}')
         try:
             capitulo = translate(text,arrayNumCapElement)##OUT: capitulo[str,num_cap]
         except Exception as e:
-            print(f'Error al traducir el capitulo {arrayNumCapElement}: {e}')               
+            print(f'Error al traducir el capitulo {arrayNumCapElement}')               
         
-        return capitulo
+        return capitulo 
     except Exception as e:
-        print(f'Error al crear el capitulo {arrayNumCapElement}: {e}')
+        print(f'Error al crear el capitulo {arrayNumCapElement}')
         capitulo = [f'Error al crear el capitulo {arrayNumCapElement}',arrayNumCapElement]
         return capitulo
