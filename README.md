@@ -1,17 +1,1 @@
-Voy a crear una herramienta que consiste en un creador de ebooks
-
-Mi fuente de los libros sera la pagina LightNovelCave.com, donde 
-se van actualizando periodicamente
-
-Tendra una interfaz, desde la cual establezco el periodo de 
-actualizacion de los diferentes libros, ya sea 
-diaria, personalizada o poder actualizar en el momento. 
-Se podra decidir que libros se actualizan y cuales no y cada 
-libro podra tener un periodo de actualizacion diferente
-
-Todo lo realcionado con la actualizacion estara 
-gestionado con AirFlow
-
-La interfaz la hare con Django, html y css 
-
-Los scripts con python
+Herramienta de creador de Ebooks recojo el texto de la pagina lightnovelcave.com en ingles, ya que me fue imposible obtenerlo en español ni aun modificando las cookies de la api del traductor de la pagina , se traduce el texto y acumulando los capitulos que esten pendientes, se crean un ebook con los capitulos indexados que se guarda en la carpeta de drive donde lo puedo recibir desde el movil. Hay dos versiones, la que recorre los capitulos en cascada, y la que usa multiprocesos para procesarlos en paralelo, este ultimo de forma aparentemente irremediable al hacer el web scrapping aun metiendo delays no recoge el texto, pero no sucede de forma constante.
