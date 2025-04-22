@@ -1,7 +1,7 @@
 from imports.toEbook import toEbook
 from imports.multiprocessing import process_chapters
 from imports.dbUpdate import dbUpdate
-from imports.getLibros import getlibros
+from imports.getLibros import getLibros
 import subprocess
 
 apagar = input('Desea apagar el equipo al finalizar? (s/n): ')
@@ -9,7 +9,7 @@ if apagar == 's':
     apagar = True
 else:
     apagar = False       
-libros = getlibros()
+libros = getLibros()
 #bucle1 iterar sobre libros
 
 name = libros[0]
